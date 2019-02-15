@@ -9,7 +9,36 @@ namespace UnitTests
     [TestClass]
     public class UnitTest1
     {
-        
+        [Test]
+        public void CzyDobrzeLiczyBrutto()// Dla klasy Pozycje Zamowienia metoda Oblicz Brutto
+        {
+
+            var poz = new PozycjaZamowienia();
+            var wynik = 1.23 * (15 * 20000);
+            poz.nazwaTowaru = "nazwa";
+            poz.ilosc = 15;
+            poz.stawkaVat = 23;
+            poz.cenaJednostkowa = 20000;
+
+            Assert.That(poz.ObliczBrutto(), Is.EqualTo(wynik));
+
+        }
+
+
+        [Test]
+        public void CzyDobrzeLiczyBruttoUjemne()// Dla klasy Pozycje Zamowienia metoda Oblicz Brutto ujemne wartości
+        {
+
+            var poz = new PozycjaZamowienia();
+            poz.nazwaTowaru = "nazwa";
+            poz.ilosc = -15;
+            poz.stawkaVat = 23;
+            poz.cenaJednostkowa = 20000;
+
+            Assert.Greater(poz.ObliczBrutto(), 0); // Brak obsłużonego wyjątku dla ujemej wartości, wynik powinien być większy od 0.
+
+        }
+
         [Test]  
         public void CzyDobrzeLiczyPodatek()// Dla klasy Pozycje Zamowienia metoda Oblicz Podatek
         {
