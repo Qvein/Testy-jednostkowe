@@ -146,7 +146,7 @@ namespace ZamowieniaObiektowe
             PozycjaZamowienia poz = new PozycjaZamowienia();
             try
             {
-                Console.WriteLine("Podaj towar:");
+                Console.WriteLine("Podaj indeks towaru:");
                 poz.nazwaTowaru = Console.ReadLine();
                 Console.WriteLine("Podaj ilość:");
                 poz.ilosc = (float)Convert.ToDouble(Console.ReadLine());

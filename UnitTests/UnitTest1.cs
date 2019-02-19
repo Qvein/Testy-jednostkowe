@@ -244,8 +244,8 @@ namespace UnitTests
             string bank = "ING";
             float oprocentowanie = (float)Convert.ToDouble(20);
             var platnosc = new Kredyt(raty, bank, oprocentowanie);
-            // platnosc.Zaplac(zam);
-            Assert.IsTrue(zam.OplacZamowienie(platnosc));// wartośc bookowska czy zaplacone zamówiebnie
+            
+            Assert.IsTrue(zam.OplacZamowienie(platnosc));// wartośc boolowska czy zaplacone zamówiebnie
         }
 
 
